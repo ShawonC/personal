@@ -1,0 +1,97 @@
+Project Goal = Finished product will randomly generate a weekly workout scheudle
+			   taking into account:
+			   		- Past week's exercises
+			   			- Order of exercises (not repeating muscles on the same days)
+			   			- 
+					- What type of week the user is working
+						- strength building
+						- muscle building
+						- endurance
+						- pilates
+						- hiit (high intesitiy interval training)
+						- cardio
+						- sport
+						- stretching (always part of the routine)
+						- recovery
+					- Goals the user has
+						- Gaining Muscle Mass (weight scales towards muscle buidling)
+						- Gaining Endurance (weight scales towards endurance and hiit)
+						- Flexibility (weight scales towards pilates)
+						- 
+					-  
+			   Will email workout plan to user. 
+
+
+Project Needs =[
+				- Workout Library (any API's to leverage?{Look for Exercise websites and try to scrape data in any format, preferably JSON})
+					- Links to information/videos/pictures of exercises
+					- Exercises for muscle targets
+					- Muscle targets and sub-targets 
+						- Arms
+							- Biceps
+							- Triceps
+							- Forearms
+						- Legs
+							- Quads
+							- Hamstrings
+							- Calves
+							- Ankles
+							- Jumping
+						- Chest
+							- Upper chest
+							- Lower chest
+							- Outer chest
+							- Inner chest
+						- Back
+							- Lats
+							- Upper back
+							- Lower back
+						- Abs
+							- Upper abs
+							- Lower abs
+							- Obliques
+							- Hip flexors
+							- Torso
+						- Full Body
+							- Strength based
+							- Cardio based
+							- Intervals
+				- Radomization Tools
+				- User input mechanism 
+					- Goals
+						- List of potential goals and tailored exercises
+					- Type of workouts in week 
+						- Strength (heavy weight lower reps)
+						- Endurance (lighter weight more reps)
+						- Muscle Building/Growth (mix of strength and endurance)
+						- Cardio 
+					- Type of splits
+						- How many days working out
+						- Types of workouts (example: mix cardio and endurance)
+					- Limitations
+						- Physical limitations?
+						- Equipment limitations
+?					- Some kind of GUI (web based?)
+
+
+
+User Input Module
+	
+	Queries:
+	- Height (metric or imperial)
+	- Weight (lbs)
+		- Ask to store on first run and save answers to local yaml file
+	- Type of workout week desired (can mix types, specify splits)
+
+
+	Structure:
+
+	first install: class variables set to none, write input from script into yaml file for later use, turn on updating of exercises automatically
+
+	second install: run overall conditional to evaluate if class variables are set, ask user if they want to change any existing variables, check for automatic exercise updates(if off ask if want to update. Offer to turn off prompt)
+
+Yaml to JSON Exercise Job
+	
+	- Queries websites for JSON response using requests and saves it to a file.
+	- CRON or other job runs in folder to do a new pull weekly
+		- Dumps JSON information into yaml file
